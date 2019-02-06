@@ -16,7 +16,8 @@ This is my writeup for the project "PID Control" of Self Driving Car Nanadegree 
 
 The goals / steps of this project are the following:
 
-* To be added
+* The goal of this project is to implement a PID controller in C++ to maneuver the vehicle around the track.
+* More detail explanation can be found in [README](https://github.com/pl80tech/CarND-PID-Control-Project/blob/master/README.md)
 
 ---
 ## Project code

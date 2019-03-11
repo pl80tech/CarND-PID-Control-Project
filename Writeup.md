@@ -38,6 +38,8 @@ https://github.com/udacity/CarND-PID-Control-Project.git
 ---
 ## Rubric Points
 
+Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1972/view) which need to be addressed to meet the requirements of this project. Each point/criteria is explained in next sections.
+
 ---
 ## Code compilation
 

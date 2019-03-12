@@ -40,5 +40,6 @@ double PID::TotalError() {
   /**
    * TODO: Calculate and return the total error
    */
-  return 0.0;  // TODO: Add your total error calc here!
+  // Sum of each component (Proportional - Integral - Differential)
+  return (Kp*p_error + Ki*i_error + Kd*d_error);
 }

@@ -27,7 +27,13 @@ void PID::UpdateError(double cte) {
   /**
    * TODO: Update PID errors based on cte.
    */
+  // Set the delta time to 1
+  double delta = 1;
 
+  // Update the error of each component based on cte and delta time
+  d_error = (cte - p_error)/delta;
+  p_error = cte;
+  i_error += cte*delta;
 }
 
 double PID::TotalError() {

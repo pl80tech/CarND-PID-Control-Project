@@ -37,6 +37,17 @@ int main() {
   /**
    * TODO: Initialize the pid variable.
    */
+  // Default coefficient (temporary value, need to be tuned)
+  #define KP_DEFAULT -0.1;
+  #define KI_DEFAULT -0.001;
+  #define KD_DEFAULT -1;
+
+  // Initialize PID using default values
+  double kp_init, ki_init, kd_init;
+  kp_init = KP_DEFAULT;
+  ki_init = KI_DEFAULT;
+  kd_init = KD_DEFAULT;
+  pid.Init(kp_init, ki_init, kd_init);
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 
                      uWS::OpCode opCode) {

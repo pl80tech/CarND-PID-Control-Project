@@ -45,6 +45,35 @@ Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1972/view) wh
 ---
 ## Code compilation
 
+The final solution is implemented in [/src/main.cpp](https://github.com/pl80tech/CarND-PID-Control-Project/blob/master/src/main.cpp) and [PID.cpp](https://github.com/pl80tech/CarND-PID-Control-Project/blob/master/src/PID.cpp). It can be compiled successfully with **cmake** and **make** (as explained in [README](https://github.com/pl80tech/CarND-PID-Control-Project/blob/master/README.md)).
+
+```shell
+$ cmake ..
+-- The C compiler identification is GNU 5.4.0
+-- The CXX compiler identification is GNU 5.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+
+$ make
+Scanning dependencies of target pid
+[ 33%] Building CXX object CMakeFiles/pid.dir/src/PID.cpp.o
+[ 66%] Building CXX object CMakeFiles/pid.dir/src/main.cpp.o
+[100%] Linking CXX executable pid
+[100%] Built target pid
+```
+
 ---
 ## Implementation
 

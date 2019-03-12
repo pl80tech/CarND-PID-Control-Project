@@ -14,6 +14,8 @@ This is my writeup for the project "PID Control" of Self Driving Car Nanadegree 
 * [Code compilation](#Code-compilation)
 * [Implementation](#Implementation)
 * [Reflection](#Reflection)
+	* [Effect of each components](#Effect-of-each-components)
+	* [How to choose the hyperparameters](#How-to-choose-the-hyperparameters)
 * [Output video](#Output-video)
 
 ---
@@ -48,6 +50,10 @@ Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1972/view) wh
 
 ---
 ## Reflection
+
+### Effect of each components
+
+### How to choose the hyperparameters
 
 ---
 ## Output video

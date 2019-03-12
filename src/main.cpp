@@ -30,7 +30,7 @@ string hasData(string s) {
   return "";
 }
 
-int main() {
+int main(int argc, char* argv[]) {
   uWS::Hub h;
 
   PID pid;
@@ -42,11 +42,19 @@ int main() {
   #define KI_DEFAULT -0.001;
   #define KD_DEFAULT -1;
 
-  // Initialize PID using default values
+  // Use the values from command line (for tuning) or default values (when no argument is specified)
   double kp_init, ki_init, kd_init;
-  kp_init = KP_DEFAULT;
-  ki_init = KI_DEFAULT;
-  kd_init = KD_DEFAULT;
+  if (argc > 1) {
+    kp_init = atof(argv[1]);
+    ki_init = atof(argv[2]);
+    kd_init = atof(argv[3]);
+  } else {
+    kp_init = KP_DEFAULT;
+    ki_init = KI_DEFAULT;
+    kd_init = KD_DEFAULT;
+  }
+
+  // Initialize PID using default values
   pid.Init(kp_init, ki_init, kd_init);
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 

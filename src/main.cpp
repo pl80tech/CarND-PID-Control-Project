@@ -54,7 +54,8 @@ int main(int argc, char* argv[]) {
     kd_init = KD_DEFAULT;
   }
 
-  // Initialize PID using default values
+  // Initialize PID with the given values
+  std::cout << "Initial values: " << "kp = " << kp_init << ", ki = " << ki_init << ", kd = " << kd_init << std::endl;
   pid.Init(kp_init, ki_init, kd_init);
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 

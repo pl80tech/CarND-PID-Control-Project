@@ -60,7 +60,14 @@ int main(int argc, char* argv[]) {
   pid.Init(kp_init, ki_init, kd_init);
 
   // File to save the log
-  std::string log_filename = "../log/cte.txt";
+  std::string logfile = "../log/cte";
+  logfile += "_kp";
+  logfile += std::to_string(kp_init);
+  logfile += "_ki";
+  logfile += std::to_string(ki_init);
+  logfile += "_kd";
+  logfile += std::to_string(kd_init);
+  logfile += ".txt";
   std::ofstream logfile(log_filename.c_str(), std::ofstream::out);
 
   h.onMessage([&pid, &logfile](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 

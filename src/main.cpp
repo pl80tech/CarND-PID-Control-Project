@@ -4,6 +4,7 @@
 #include <string>
 #include "json.hpp"
 #include "PID.h"
+#include <fstream>
 
 // for convenience
 using nlohmann::json;
@@ -58,7 +59,11 @@ int main(int argc, char* argv[]) {
   std::cout << "Initial values: " << "kp = " << kp_init << ", ki = " << ki_init << ", kd = " << kd_init << std::endl;
   pid.Init(kp_init, ki_init, kd_init);
 
-  h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 
+  // File to save the log
+  std::string log_filename = "../log/cte.txt";
+  std::ofstream logfile(log_filename.c_str(), std::ofstream::out);
+
+  h.onMessage([&pid, &logfile](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 
                      uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
     // The 4 signifies a websocket message
@@ -89,6 +94,8 @@ int main(int argc, char* argv[]) {
           // DEBUG
           std::cout << "CTE: " << cte << " Steering Value: " << steer_value 
                     << std::endl;
+          // Save data to log file
+          logfile << cte << std::endl;
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
@@ -109,10 +116,14 @@ int main(int argc, char* argv[]) {
     std::cout << "Connected!!!" << std::endl;
   });
 
-  h.onDisconnection([&h](uWS::WebSocket<uWS::SERVER> ws, int code, 
+  h.onDisconnection([&h,&logfile](uWS::WebSocket<uWS::SERVER> ws, int code, 
                          char *message, size_t length) {
     ws.close();
     std::cout << "Disconnected" << std::endl;
+    if (logfile.is_open())
+    {
+      logfile.close();
+    }
   });
 
   int port = 4567;

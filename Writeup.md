@@ -17,7 +17,7 @@ This is my writeup for the project "PID Control" of Self Driving Car Nanadegree 
 * [Reflection](#Reflection)
 	* [Effect of each components](#Effect-of-each-components)
 	* [How to choose the hyperparameters](#How-to-choose-the-hyperparameters)
-* [Output video](#Output-video)
+* [Simulation](#Simulation)
 
 ---
 ## About PID Control Project
@@ -86,4 +86,4 @@ Scanning dependencies of target pid
 ### How to choose the hyperparameters
 
 ---
-## Output video
+## Simulation

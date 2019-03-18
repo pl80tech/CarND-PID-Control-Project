@@ -31,6 +31,27 @@ string hasData(string s) {
   return "";
 }
 
+// Get time information (for name of log file)
+string getTimeInfo() {
+  // Get local time information
+  time_t time_var = time(nullptr);
+  const tm* local_time = localtime(&time_var);
+
+  // Create a string for time information with format 20YYMMDD_HHMMSS
+  std::stringstream timeinfo_s;
+  timeinfo_s << "20";
+  timeinfo_s << local_time->tm_year - 100;
+  timeinfo_s << local_time->tm_mon + 1;
+  timeinfo_s << local_time->tm_mday;
+  timeinfo_s << "_";
+  timeinfo_s << local_time->tm_hour;
+  timeinfo_s << local_time->tm_min;
+  timeinfo_s << local_time->tm_sec;
+  std::string timeinfo = timeinfo_s.str();
+
+  return timeinfo;
+}
+
 int main(int argc, char* argv[]) {
   uWS::Hub h;
 
@@ -59,24 +80,12 @@ int main(int argc, char* argv[]) {
   std::cout << "Initial values: " << "kp = " << kp_init << ", ki = " << ki_init << ", kd = " << kd_init << std::endl;
   pid.Init(kp_init, ki_init, kd_init);
 
-  // Get local time information
-  time_t time_var = time(nullptr);
-  const tm* local_time = localtime(&time_var);
-
-  // Create a string for time information with format 20YYMMDD_HHMMSS
-  std::stringstream timeinfo_s;
-  timeinfo_s << "20";
-  timeinfo_s << local_time->tm_year - 100;
-  timeinfo_s << local_time->tm_mon + 1;
-  timeinfo_s << local_time->tm_mday;
-  timeinfo_s << "_";
-  timeinfo_s << local_time->tm_hour;
-  timeinfo_s << local_time->tm_min;
-  timeinfo_s << local_time->tm_sec;
-  std::string timeinfo = timeinfo_s.str();
+  // Get time information with format 20YYMMDD_HHMMSS
+  std::string timeinfo = getTimeInfo();
 
   // File to save the log
   std::string log_filename = "../log/";
+
   log_filename += timeinfo;
   log_filename += "_cte";
   log_filename += "_kp";

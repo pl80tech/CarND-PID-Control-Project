@@ -3,7 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sys
 
-logfile = sys.argv[1]
+if len(sys.argv) > 1:
+	logfile = sys.argv[1]
+	print("Log file to be visualized: " + str(logfile))
+else:
+	print("No file to be visualized")
+
 logline = open(logfile, "r").readlines()
 
 cte = [0] * len(logline)
@@ -14,6 +19,12 @@ for i in range(len(logline)):
     x[i] = i
 
 plt.plot(x, cte)
-savefile = sys.argv[2]
-plt.savefig(savefile)
+
+if len(sys.argv) > 2:
+	savefile = sys.argv[2]
+	print("Save visualized data to " + str(savefile))
+	plt.savefig(savefile)
+else:
+	print("Not save the visualized data")
+
 plt.show()

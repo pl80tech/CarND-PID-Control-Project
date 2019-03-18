@@ -41,13 +41,30 @@ string getTimeInfo() {
   std::stringstream timeinfo_s;
   timeinfo_s << "20";
   timeinfo_s << local_time->tm_year - 100;
+  if (local_time->tm_mon < 9) {
+    timeinfo_s << "0";
+  }
   timeinfo_s << local_time->tm_mon + 1;
+  if (local_time->tm_mday < 10) {
+    timeinfo_s << "0";
+  }
   timeinfo_s << local_time->tm_mday;
   timeinfo_s << "_";
+  if (local_time->tm_hour < 10) {
+    timeinfo_s << "0";
+  }
   timeinfo_s << local_time->tm_hour;
+  if (local_time->tm_min < 10) {
+    timeinfo_s << "0";
+  }
   timeinfo_s << local_time->tm_min;
+  if (local_time->tm_sec < 10) {
+    timeinfo_s << "0";
+  }
   timeinfo_s << local_time->tm_sec;
   std::string timeinfo = timeinfo_s.str();
+
+  std::cout << timeinfo << std::endl;
 
   return timeinfo;
 }

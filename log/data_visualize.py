@@ -14,4 +14,6 @@ for i in range(len(logline)):
     x[i] = i
 
 plt.plot(x, cte)
+savefile = sys.argv[2]
+plt.savefig(savefile)
 plt.show()

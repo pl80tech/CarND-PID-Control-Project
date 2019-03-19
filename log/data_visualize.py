@@ -26,31 +26,30 @@ def getCenterLine(len):
 
 	return x, y
 
-# Get the log file from command line
-if len(sys.argv) > 1:
-	logfile = sys.argv[1]
-	print("Log file to be visualized: " + str(logfile))
-else:
-	print("No file to be visualized")
+# Get x, y coordiante from the log files (passed from command line)
+x1, cte1 = getLogData(sys.argv[1])
+x2, cte2 = getLogData(sys.argv[2])
+x3, cte3 = getLogData(sys.argv[3])
 
-# Plot the data from log file
-x, cte = getLogData(logfile)
-center_x, center_y = getCenterLine(len(x))
+# Get x, y coordinate for center line
+center_len = max(len(x1), len(x2), len(x3))
+center_x, center_y = getCenterLine(center_len)
 
-plt.plot(x, cte)
+# Plot multiple data in a same figure
+plt.plot(x1, cte1)
+plt.plot(x2, cte2)
+plt.plot(x3, cte3)
 plt.plot(center_x, center_y)
-plt.title(sys.argv[3])
-plt.ylabel(sys.argv[4])
+
+# Add title, label and legend
+plt.title(sys.argv[4])
 plt.xlabel(sys.argv[5])
-plt.legend([sys.argv[6], sys.argv[7]])
+plt.ylabel(sys.argv[6])
+plt.legend([sys.argv[7], sys.argv[8], sys.argv[9]])
 
 # Save visualized data to image file
-if len(sys.argv) > 2:
-	savefile = sys.argv[2]
-	print("Save visualized data to " + str(savefile))
-	plt.savefig(savefile)
-else:
-	print("Not save the visualized data")
+savefile = sys.argv[10]
+plt.savefig(savefile)
 
 # Show on screen
 plt.show()

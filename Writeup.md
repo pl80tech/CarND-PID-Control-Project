@@ -19,6 +19,10 @@ This is my writeup for the project "PID Control" of Self Driving Car Nanadegree 
 	* [How to choose the hyperparameters](#How-to-choose-the-hyperparameters)
 * [Simulation](#Simulation)
 
+[//]: # (Image References)
+
+[tuneKp]: ./log/Kp_tuning.jpg "Result with different Kp"
+
 ---
 ## About PID Control Project
 
@@ -84,6 +88,10 @@ Scanning dependencies of target pid
 ### Effect of each components
 
 ### How to choose the hyperparameters
+
+| Tuning parameters       | Visualization           |
+|:-----------------------:|:-----------------------:|
+| Kp                      | ![alt text][tuneKp]     |
 
 ---
 ## Simulation

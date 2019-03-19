@@ -39,6 +39,10 @@ center_x, center_y = getCenterLine(len(x))
 
 plt.plot(x, cte)
 plt.plot(center_x, center_y)
+plt.title(sys.argv[3])
+plt.ylabel(sys.argv[4])
+plt.xlabel(sys.argv[5])
+plt.legend([sys.argv[6], sys.argv[7]])
 
 # Save visualized data to image file
 if len(sys.argv) > 2:

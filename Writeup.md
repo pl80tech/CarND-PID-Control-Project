@@ -22,6 +22,7 @@ This is my writeup for the project "PID Control" of Self Driving Car Nanadegree 
 [//]: # (Image References)
 
 [tuneKp]: ./log/Kp_tuning.jpg "Result with different Kp"
+[tuneKi]: ./log/Ki_tuning.jpg "Result with different Ki"
 
 [animation]: ./output/SimulationWithTunedCoefficient.gif "Simulation with tuned coefficients"
 
@@ -94,6 +95,7 @@ Scanning dependencies of target pid
 | Tuning parameters       | Visualization           |
 |:-----------------------:|:-----------------------:|
 | Kp                      | ![alt text][tuneKp]     |
+| Ki                      | ![alt text][tuneKi]     |
 
 ---
 ## Simulation

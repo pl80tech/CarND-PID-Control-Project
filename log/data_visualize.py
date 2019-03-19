@@ -14,6 +14,15 @@ def getLogData(logfile):
 
 	return x, cte
 
+def getCenterLine(len):
+	x = [0] * len
+	y = [0] * len
+
+	for i in range(len):
+		x[i] = i
+
+	return x, y
+
 if len(sys.argv) > 1:
 	logfile = sys.argv[1]
 	print("Log file to be visualized: " + str(logfile))
@@ -21,8 +30,10 @@ else:
 	print("No file to be visualized")
 
 x, cte = getLogData(logfile)
+center_x, center_y = getCenterLine(len(x))
 
 plt.plot(x, cte)
+plt.plot(center_x, center_y)
 
 if len(sys.argv) > 2:
 	savefile = sys.argv[2]

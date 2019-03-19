@@ -77,9 +77,9 @@ int main(int argc, char* argv[]) {
    * TODO: Initialize the pid variable.
    */
   // Default coefficient (temporary value, need to be tuned)
-  #define KP_DEFAULT -0.1;
-  #define KI_DEFAULT -0.001;
-  #define KD_DEFAULT -1;
+  #define KP_DEFAULT 0.1;
+  #define KI_DEFAULT 0.001;
+  #define KD_DEFAULT 1;
 
   // Use the values from command line (for tuning) or default values (when no argument is specified)
   double kp_init, ki_init, kd_init;

@@ -86,6 +86,8 @@ Scanning dependencies of target pid
 ---
 ## Implementation
 
+The process for PID control is implemented in main() function on [/src/main.cpp](https://github.com/pl80tech/CarND-PID-Control-Project/blob/master/src/main.cpp) and each function of PID class on [/src/PID.cpp](https://github.com/pl80tech/CarND-PID-Control-Project/blob/master/src/PID.cpp), following the base algorithm as presented in the lesson.
+
 ---
 ## Reflection
 

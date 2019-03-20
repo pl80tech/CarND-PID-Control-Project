@@ -93,6 +93,10 @@ The process for PID control is implemented in main() function on [/src/main.cpp]
 
 ### Effect of each components
 
+* P - Proportional
+* I - Integral
+* D - Differential
+
 ### How to choose the hyperparameters
 
 The code is implemented so that the coefficients Kp/Ki/Kd can be passed directly from command line (like below example) and the simulated data (CTE) is saved in log file with format 20YYMMDD_HHMMSS_cte_Kpxx_Kixx_Kdxx.txt for easy visualization & tuning.
@@ -109,7 +113,7 @@ The save logs are then processed (as below) by a python script [/log/data_visual
 $ python data_visualize.py <log1> <log2> <log3> <title> <xlabel> <ylabel> <legend1> <legend2> <legend3> <savefile>
 ```
 
-Here are the observation results, from which I chose Kp=0.1, Ki=0.001, Ki=1 as final/tuned coefficients.
+Here are the observation results of simulation test for 1 lap with various combinations of 3 coefficients, from which I chose Kp=0.1, Ki=0.001, Ki=1 as final/tuned coefficients.
 
 | Tuning parameters       | Visualization           |
 |:-----------------------:|:-----------------------:|

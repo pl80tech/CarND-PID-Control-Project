@@ -103,6 +103,7 @@ The process for PID control is implemented in main() function on [/src/main.cpp]
 
 * D - Differential
 
+ From the calculation, it is related to error change rate. It can help to predict future behavior, reduce the overshoot/oscillation and improve stablity for smooth drive. Very large value may make the system response slowly while very small value may take few effect.
 
 ### How to choose the hyperparameters
 

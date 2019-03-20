@@ -95,6 +95,22 @@ The process for PID control is implemented in main() function on [/src/main.cpp]
 
 ### How to choose the hyperparameters
 
+The code is implemented so that the coefficients Kp/Ki/Kd can be passed directly from command line (like below example) and the simulated data (CTE) is saved in log file with format 20YYMMDD_HHMMSS_cte_Kpxx_Kixx_Kdxx.txt for easy visualization & tuning.
+
+```shell
+$ ./pid 0.1 0.0001 1
+Initial values: kp = 0.1, ki = 0.0001, kd = 1
+Listening to port 4567
+```
+
+The save logs are then processed (as below) by a python script [/log/data_visualize.py](https://github.com/pl80tech/CarND-PID-Control-Project/blob/master/log/data_visualize.py) to visualize the simulated data of multiple combinations (keeping 2 coefficients while changing the remaining one in small range) for easy comparison.
+
+```shell
+$ python data_visualize.py <log1> <log2> <log3> <title> <xlabel> <ylabel> <legend1> <legend2> <legend3> <savefile>
+```
+
+Here are the observation results, from which I chose Kp=0.1, Ki=0.001, Ki=1 as final/tuned coefficients.
+
 | Tuning parameters       | Visualization           |
 |:-----------------------:|:-----------------------:|
 | Kp                      | ![alt text][tuneKp]     |

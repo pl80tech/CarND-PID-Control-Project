@@ -98,6 +98,9 @@ The process for PID control is implemented in main() function on [/src/main.cpp]
  Control the offset (from center of the lane) and keep the car in right direction (stay on track). Large value may make the system very unstable (like jumping outside of the lane) while small value may make the system weak when trying to align with center line.
 
 * I - Integral
+
+ From the calculation, it is related not only to the error but also to the time for which it has persisted. It represents the sum of previous errors (or average offset) and can help to reduce the overshoot as time passes. Very large value may make the system very unstable (going round and jumping out of the road) at the beginning while very small value may take time to take effect.
+
 * D - Differential
 
 

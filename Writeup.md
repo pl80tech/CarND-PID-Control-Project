@@ -102,6 +102,8 @@ Scanning dependencies of target pid
 ---
 ## Simulation
 
-| Filename | Link on Youtube |
-|:--------:|:---------------:|
-| Simulation video | [![alt text][animation]](https://www.youtube.com/watch?v=zLosrupTjGo) |
+Here is the simulation video with tuned coefficients (Kp=0.1, Ki=0.001, Ki=1). Click on the thumbnail animated gif to view the video directly on Youtube or click on the hyperlink to download the video on Github.
+
+| Link on Github | Link on Youtube |
+|:--------------:|:---------------:|
+| [Simulation video](https://github.com/pl80tech/CarND-PID-Control-Project/blob/master/output/SimulationWithTunedCoefficient.mp4) | [![alt text][animation]](https://www.youtube.com/watch?v=zLosrupTjGo) |

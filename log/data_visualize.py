@@ -1,3 +1,18 @@
+# Script to visualize multiple log in a figure & save to image for easy comparison
+#
+# How to use:
+# $ python data_visualize.py arg1 arg2 arg3 arg4 arg5 arg6 arg7 arg8 arg9 arg10
+# arg1  --> log file 1
+# arg2  --> log file 2
+# arg3  --> log file 3
+# arg4  --> title of the figure
+# arg5  --> x label of the figure
+# arg6  --> y label of the figure
+# arg7  --> legend for log 1
+# arg8  --> legend for log 2
+# arg9  --> legend for log 3
+# arg10 --> save file
+
 # Import the required packages
 import random
 import numpy as np

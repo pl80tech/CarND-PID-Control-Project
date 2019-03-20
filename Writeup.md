@@ -93,9 +93,11 @@ The process for PID control is implemented in main() function on [/src/main.cpp]
 
 ### Effect of each components
 
+Here is the effect of each P-I-D component which can be partly observed in the visualization result showing in section [How to choose the hyperparameters](#How-to-choose-the-hyperparameters).
+
 * P - Proportional
 
- Control the offset (from center of the lane) and keep the car in right direction (stay on track). Large value may make the system very unstable (like jumping outside of the lane) while small value may make the system weak when trying to align with center line.
+ From the calculation, it represents the error directly. It can help to control the offset (from center of the lane) and keep the car in right direction (stay on track). Large value may make the system very unstable (like jumping outside of the lane) while small value may make the system weak when trying to align with center line.
 
 * I - Integral
 
